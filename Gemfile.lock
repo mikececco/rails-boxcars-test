@@ -70,6 +70,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    boxcars (0.2.11)
+      google_search_results (~> 2.2)
+      gpt4all (~> 0.0.4)
+      ruby-openai (~> 3.0)
     builder (3.2.4)
     cancancan (3.5.0)
     concurrent-ruby (1.2.2)
@@ -99,9 +103,18 @@ GEM
     faraday-net_http (3.0.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    google_search_results (2.2.0)
+    gpt4all (0.0.5)
+      faraday (~> 2.7)
+      os (~> 1.1)
+      tty-progressbar (~> 0.18.2)
     hashie (5.0.0)
     heroicon (1.0.0)
       rails (>= 5.2)
+    hnswlib (0.8.1)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -168,6 +181,7 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
+    os (1.1.4)
     pagy (5.10.1)
       activesupport
     pg (1.4.6)
@@ -215,6 +229,8 @@ GEM
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    ruby-openai (3.7.0)
+      httparty (>= 0.18.1)
     ruby2_keywords (0.0.5)
     snaky_hash (2.0.1)
       hashie
@@ -226,14 +242,23 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    strings-ansi (0.2.0)
     thor (1.2.1)
     timeout (0.3.2)
+    tty-cursor (0.7.1)
+    tty-progressbar (0.18.2)
+      strings-ansi (~> 0.2)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      unicode-display_width (>= 1.6, < 3.0)
+    tty-screen (0.8.1)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.4.2)
     version_gem (1.1.2)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -255,13 +280,16 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (~> 1.13)
+  boxcars
   cancancan (~> 3.4)
   cssbundling-rails (~> 1.1)
   debug
   devise (~> 4.8)
+  dotenv
   dotenv-rails
   faker (~> 2)
   heroicon (~> 1.0)
+  hnswlib
   jsbundling-rails (~> 1.0)
   omniauth-facebook (~> 9.0.0)
   omniauth-github (~> 2.0)
@@ -277,7 +305,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.2.1p31
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.4.10

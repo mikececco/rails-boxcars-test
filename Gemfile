@@ -28,3 +28,7 @@ group :development do
   gem "debug"
   gem "dotenv-rails"
 end
+
+gem "boxcars"
+gem "dotenv"
+gem 'hnswlib'
